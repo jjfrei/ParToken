@@ -1,4 +1,18 @@
 
+
+#' Parallel tokenize a dataset directly
+#'
+#' @param path path to your dataset
+#' @param data_type what kind of data type is the dataset
+#' @param text which column of the ds has the text in it
+#' @param unit tokenize by which unit "word" or "sentence"
+#' @param language language of the stop words
+#' @param preprocess should the tokens be preprocessed? TRUE or FALSE
+#'
+#' @return tokens
+#' @export
+#'
+#' @examples pre_tokens <- tokenize_dataset(path = "PPE_party.csv", text = "fused", preprocess = FALSE)
 tokenize_dataset <- function(path, data_type = "csv", text = "text", unit = "word", language = "en", preprocess = TRUE){
   #load data
   if (!require("foreach", character.only = TRUE)) {
@@ -68,6 +82,18 @@ tokenize_dataset <- function(path, data_type = "csv", text = "text", unit = "wor
 
 
 
+#' Parallel tokenize an df
+#'
+#' @param df df you want to tokenize
+#' @param text which column of the ds has the text in it
+#' @param unit tokenize by which unit "word" or "sentence"
+#' @param language language of the stop words
+#' @param preprocess should the tokens be preprocessed? TRUE or FALSE
+#'
+#' @return tokens
+#' @export
+#'
+#' @examples pre_tokens <- tokenize_dataframe(path = "PPE_party.csv", text = "fused", preprocess = FALSE)
 tokenize_dataframe <- function(df, text = "text", unit = "word", language = "en", preprocess = TRUE){
   #load data
   if (!require("foreach", character.only = TRUE)) {
