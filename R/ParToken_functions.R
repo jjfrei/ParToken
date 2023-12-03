@@ -28,6 +28,10 @@ tokenize_dataframe <- tokenize_dataframe2 <- function(df, text = "text", unit = 
     install.packages("tidyverse")
     library(tidyverse)
   }
+  if (!require("quanteda", character.only = TRUE)) {
+    install.packages("quanteda")
+    library(quanteda)
+  }
 
   corp <- corpus(df, text_field = text)
   core = as.numeric(detectCores())
