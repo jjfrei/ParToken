@@ -31,6 +31,10 @@ tokenize_dataset <- function(path, data_type = "csv", text = "text", unit = "wor
     install.packages("tidyverse")
     library(tidyverse)
   }
+  if (!require("quanteda", character.only = TRUE)) {
+    install.packages("quanteda")
+    library(quanteda)
+  }
 
   if (data_type == "csv") {
     df <- read.csv(path)
@@ -111,6 +115,10 @@ tokenize_dataframe <- function(df, text = "text", unit = "word", language = "en"
   if (!require("tidyverse", character.only = TRUE)) {
     install.packages("tidyverse")
     library(tidyverse)
+  }
+  if (!require("quanteda", character.only = TRUE)) {
+    install.packages("quanteda")
+    library(quanteda)
   }
 
   corp <- corpus(df, text_field = text)
