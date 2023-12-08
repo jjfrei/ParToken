@@ -10,7 +10,7 @@
 #' @export
 #'
 #' @examples pre_tokens <- tokenize_dataframe(path = "PPE_party.csv", text = "fused", preprocess = FALSE)
-tokenize_dataframe <- tokenize_dataframe2 <- function(df, text = "text", unit = "word", language = "en", preprocess = TRUE){
+tokenize_dataframe <- function(df, text = "text", unit = "word", language = "en", preprocess = TRUE){
   #load data
   if (!require("foreach", character.only = TRUE)) {
     install.packages("foreach")
